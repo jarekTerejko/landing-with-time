@@ -16,11 +16,42 @@ body {
   align-items: center;
   text-align: center;
   min-height: 100vh;
-padding: 10px;  
-background-position: center;
+  padding: 10px;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  animation: appearBg forwards;
+  animation-duration: 2.5s;
 }
+
+main {
+  animation: appearTxt 2s 1s forwards;
+}
+
+@keyframes appearBg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appearTxt {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  90% {
+    opacity: .9;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .loader {
   /* content: ""; */
   height: 100vh;
@@ -29,15 +60,26 @@ background-position: center;
   justify-content: center;
   align-items: center;
   z-index: 10000;
-  background-color: rgb(0, 107, 107);
+  background-color: rgba(5, 4, 83, 1);
   position: absolute;
   top: 0;
   left: 0;
+  animation: disappear forwards;
+  animation-delay: 1s;
+  animation-duration: 1.4s;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .time {
   font-size: 6rem;
-  color: #e6e6e6;
   margin-bottom: 1.8rem;
 }
 
@@ -47,34 +89,14 @@ background-position: center;
 }
 
 h1 {
-  margin-bottom: 0.2rem;
-  color: #dddddd;
+  margin-bottom: 0.4rem;
   font-size: 4rem;
   font-weight: 400;
-}
-
-.greeting-header {
-  text-transform: capitalize;
-}
-
-.name {
-  /* font-size: 4rem; */
-  color: #fff;
-}
-
-.focus-header {
-  /* font-size: 2.8rem; */
-}
-
-.focus {
-  /* font-size: 2.8rem; */
-  color: #fff;
 }
 
 h2 {
   margin-bottom: 1rem;
   margin-top: 1rem;
-  color: #dfdfdf;
   font-weight: 400;
   font-size: 2.8rem;
 }
@@ -118,11 +140,11 @@ h2 {
   }
 
   h1 {
-      font-size: 3rem;
+    font-size: 3rem;
   }
 
   h2 {
-      font-size: 2.4rem
+    font-size: 2.4rem;
   }
 }
 
@@ -133,28 +155,27 @@ h2 {
 
   h1 {
     font-size: 2.6rem;
-}
+  }
 
-h2 {
-    font-size: 2.2rem
-}
+  h2 {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 500px) {
-    .time {
-      font-size: 3rem;
-    }
+  .time {
+    font-size: 3rem;
+  }
 
-    .time span {
-        
-        bottom:3px;
-      }
-  
-    h1 {
-      font-size: 2rem;
+  .time span {
+    bottom: 3px;
   }
-  
+
+  h1 {
+    font-size: 2rem;
+  }
+
   h2 {
-      font-size: 1.8rem
+    font-size: 1.8rem;
   }
-  }
+}
